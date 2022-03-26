@@ -8,6 +8,5 @@ class AddEventRefToUser < ActiveRecord::Migration[7.0]
     end
     
     add_column :events, :creator_id, :integer
-    add_column :users, :created_event_id, :integer
   end
 end
