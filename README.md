@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Models
 
-Things you may want to cover:
+  * User
+    name: string [unique, 4-12 chars, present]
+    security information (devise)
+    
+    has_and_belongs_to_many: events
 
-* Ruby version
+  * Event
+    name: string [present]
+    info: text [present]
+    date: datetime [present]
+    location: string [present]
 
-* System dependencies
+    has_and_belongs_to_many: users
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  * User_Event
+    user_id: integer
+    part_id: integer
