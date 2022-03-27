@@ -2,7 +2,7 @@
   <% @events.each do |event| %>
     <li>
       <%= render 'events/display_event', event: event %>
-      <i>Created by: <%= event.creator.name %></i>
+      <p><i>Created by: <%= event.creator.name %></i></p>
     </li>
   <% end %>
 </ul>

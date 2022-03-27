@@ -16,6 +16,5 @@
   <%= form.datetime_field :date %><br/>
   <%= form.label :location, "Location:" %><br/>
   <%= form.text_field :location %><br/>
-  <%= form.hidden_field :creator_id, value: current_user.id %>
   <%= form.submit "Create Event" %>
 <% end %>
