@@ -1,10 +1,9 @@
 <ul>
-  <% @events.each do |event| %>
+  <% @created_events.each do |event| %>
     <li>
       <%= render 'events/display_event', event: event %>
-      <i>Created by: <%= event.creator.name %></i>
     </li>
   <% end %>
 </ul>
 
-
+<%= link_to "Create New Event", new_event_path %>
