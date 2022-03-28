@@ -1,0 +1,15 @@
+<strong><%= event.name %></strong>
+<p>Time: <%= event.date.strftime('%c') %> </p>
+<p>Location: <%= event.location %></p>
+<% if user_signed_in? %>
+  <% if current_user.name == event.creator.name%>
+    <p>Created by you</p>
+  <% else %>
+     <p><i>Created by: <%= event.creator.name %></i></p>
+  <% end %>
+<% else %>
+  <p><i>Created by: <%= event.creator.name %></i></p>
+<% end %>
+
+<%= link_to "More information about the event...", event %>
+

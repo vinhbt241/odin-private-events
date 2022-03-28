@@ -1,8 +1,7 @@
 <ul>
   <% @events.each do |event| %>
     <li>
-      <%= render 'events/display_event', event: event %>
-      <p><i>Created by: <%= event.creator.name %></i></p>
+      <%= render 'events/semi_display', event: event %>
     </li>
   <% end %>
 </ul>
