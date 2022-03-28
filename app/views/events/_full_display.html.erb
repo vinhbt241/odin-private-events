@@ -2,3 +2,19 @@
 <p>Information: <%= event.info %></p>
 <p>Time: <%= event.date.strftime('%c') %></p>
 <p>Location: <%= event.location %></p>
+<% unless current_user.name == event.creator.name %>
+  <p><i>Created by: <%= event.creator.name %></i></p>
+<% end %>
+
+<p>Attendees: </p>
+<ul>
+  <% event.attendees.each do |attendee| %>
+    <li>
+      <%= attendee.name %>
+    </li>
+  <% end %>
+</ul>
+
+<% unless event.creator_id == current_user.id %>
+  <%= button_to 'Join Event', attended_event_path(event), method: :post %>
+<% end %>
