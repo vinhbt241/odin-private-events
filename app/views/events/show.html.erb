@@ -2,4 +2,5 @@
 
 <% if @event.creator_id == current_user.id %>
   <%= link_to "Edit Event", edit_event_path %>
+  <%= link_to "Destroy Event", event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>

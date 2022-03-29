@@ -38,6 +38,13 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy 
+    @event = Event.find(params[:id])
+    @event.destroy
+
+    redirect_to user_show_path, notice: "Event removed successfully", status: 303
+  end
+
 
   private
 
