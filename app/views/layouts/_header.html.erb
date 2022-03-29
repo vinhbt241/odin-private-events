@@ -1,7 +1,7 @@
 <header>
   <nav>
     <% if user_signed_in? %>
-      Hello, <%= current_user.name %>
+      Hello, <%= current_user.name %>!
     <% end %>
 
     <%= link_to "Home", root_path %>

@@ -17,4 +17,5 @@
 
 <% unless event.creator_id == current_user.id %>
   <%= button_to 'Join Event', attended_event_path(event), method: :post %>
+  <%= button_to 'Left Event', attended_event_path(event), method: :delete %>
 <% end %>

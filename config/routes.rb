@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :events
   
   post "attended_event/:id", to: "attended_events#create", as: "attended_event"
+  delete "attended_event/:id", to: "attended_events#destroy"
 end
