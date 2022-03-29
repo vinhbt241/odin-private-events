@@ -1,25 +1,7 @@
-# README
+# Project: Private Events
 
-## Models
+## Preview
 
-  * User
-    name: string [unique, 4-12 chars, present]
-    security information (devise)
-    created_event_id: integer
-    
-    has_many: events, through: attended_events
-    has_many: created_events("Event")
+A project completed as part of The Odin Ruby on Rails Learning Track to dive into ActiveRecord’s associations. The project involves building a private website with similar functionality to the well known event organization and management platform [Eventbrite](https://www.eventbrite.com/).
 
-  * Event
-    name: string [present]
-    info: text [present]
-    date: datetime [present]
-    location: string [present]
-    creator_id: integer
-
-    belongs_to: creator("User")
-    has_many: guests, through: attended_events, source: user
-
-  * User_Event
-    user_id: integer
-    part_id: integer
+## Live Demo
