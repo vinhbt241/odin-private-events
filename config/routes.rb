@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get "user/show", to: "users#show"
 
-  resources :events, only: [:index, :show, :new, :create]
+  resources :events
   
   post "attended_event/:id", to: "attended_events#create", as: "attended_event"
 end

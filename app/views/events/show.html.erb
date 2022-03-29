@@ -1,1 +1,5 @@
 <%= render 'events/full_display', event: @event %>
+
+<% if @event.creator_id == current_user.id %>
+  <%= link_to "Edit Event", edit_event_path %>
+<% end %>

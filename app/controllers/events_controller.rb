@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show]
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update]
 
   def index 
     @past_events = Event.all.where("date <= :now", {now: Time.now})
@@ -18,9 +18,23 @@ class EventsController < ApplicationController
     @event = current_user.created_events.build(event_params)
 
     if @event.save 
-      redirect_to user_show_path
+      redirect_to @event
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit 
+    @event = Event.find(params[:id])
+  end
+  
+  def update 
+    @event = Event.find(params[:id])
+
+    if @event.update(event_params)
+      redirect_to @event
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
