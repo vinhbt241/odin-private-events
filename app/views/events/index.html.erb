@@ -1,9 +1,17 @@
+<h1>Upcoming Events</h1>
 <ul>
-  <% @events.each do |event| %>
+  <% @future_events.each do |event| %>
     <li>
       <%= render 'events/semi_display', event: event %>
     </li>
   <% end %>
 </ul>
 
-
+<h1>Past Events</h1>
+<ul>
+  <% @past_events.each do |event| %>
+    <li>
+      <%= render 'events/semi_display', event: event %>
+    </li>
+  <% end %>
+</ul>

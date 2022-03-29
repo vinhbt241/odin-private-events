@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show]
 
   def index 
-    @events = Event.all
+    @past_events = Event.all.where("date <= :now", {now: Time.now})
+    @future_events = Event.all.where("date > :now", {now: Time.now})
   end
 
   def show 
